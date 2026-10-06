@@ -1,3 +1,4 @@
+//High level modules should not depend on low level modules
 interface RecommendationStrategy{
     void recommend();
 }
@@ -23,9 +24,21 @@ class RecentRecommendation implements RecommendationStrategy{
     }
 }
 
+class RecommendationAlgorithm{
+    private RecommendationStrategy recommendationStrategy;
+    public RecommendationAlgorithm(RecommendationStrategy recommendationStrategy){
+        this.recommendationStrategy = recommendationStrategy;
+    }
+
+    public void recommend(){
+        recommendationStrategy.recommend();
+    }
+}
 public class DependencyInversionPrinciple {
     static void main(String[] args) {
         RecommendationStrategy recommendationStrategy = new RecentRecommendation();
         recommendationStrategy.recommend();
+        RecommendationAlgorithm recommendationAlgorithm = new RecommendationAlgorithm(new TrendingRecommendation());
+        recommendationAlgorithm.recommend();
     }
 }
