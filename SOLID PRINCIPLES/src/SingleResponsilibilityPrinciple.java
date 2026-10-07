@@ -1,3 +1,4 @@
+//A class should have only one reason to change, if there are multiple responsiblities one change might break other
 class User {
     private String name;
     private String email;
