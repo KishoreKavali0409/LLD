@@ -1,3 +1,4 @@
+//If S is a subtype of T, then objects of T may be replaced with objects of S without altering any of the desirable properties of that person
 class Notification{
     public void sendNotification(){
         System.out.println("Email sent");
