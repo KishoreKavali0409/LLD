@@ -1,3 +1,4 @@
+// Only one instance throughout the application's lifecycle, A global access point is provided to access that instance
 class Analytics{
     private Analytics(){
         System.out.println("Analytics obj created");
