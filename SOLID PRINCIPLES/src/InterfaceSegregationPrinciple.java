@@ -1,3 +1,4 @@
+//Client should not be forced tp depend on interfaces they don't use
 interface RiderInterface{
     void bookRide();
     void payRide();
