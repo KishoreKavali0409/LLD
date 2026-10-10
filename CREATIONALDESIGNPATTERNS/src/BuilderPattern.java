@@ -1,3 +1,7 @@
+/*
+USed to construct complex objects step by step. It separates the construction of an object from it's representation, allowing
+the same construction process to create different representations.
+ */
 class BurgerMeal {
 
     private final String bunType;
