@@ -1,15 +1,18 @@
 /*
-USed to construct complex objects step by step. It separates the construction of an object from it's representation, allowing
+Used to construct complex objects step by step. It separates the construction of an object from it's representation, allowing
 the same construction process to create different representations.
  */
 class BurgerMeal {
-
+    //Fields of the final BurgerMeal object
+    //Final ensures these fields cannot be reassigned after initialization.
     private final String bunType;
     private final String patty;
-    private final Boolean hasCheese;
+    private final boolean hasCheese;
     private final String side;
     private final String toppings;
 
+    //private constructor that takes the builder obj as a parameter(prevents direct object creation)
+    //The obj can only be created through BurgerBuilder
     private BurgerMeal(BurgerBuilder builder) {
         this.bunType = builder.bunType;
         this.patty = builder.patty;
@@ -17,7 +20,7 @@ class BurgerMeal {
         this.side = builder.side;
         this.toppings = builder.toppings;
     }
-
+    //Static Inner Builder class
     public static class BurgerBuilder {
         private final String bunType;
         private final String patty;
@@ -44,8 +47,9 @@ class BurgerMeal {
             this.toppings = toppings;
             return this;
         }
-
+        //The build method that finally returns the constructed BurgerMeal
         public BurgerMeal build() {
+            //Passes the current builder obj to the outer class constructor
             return new BurgerMeal(this);
         }
     }
