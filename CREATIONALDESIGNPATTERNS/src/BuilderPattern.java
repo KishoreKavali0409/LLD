@@ -1,18 +1,20 @@
 /*
-Used to construct complex objects step by step. It separates the construction of an object from it's representation, allowing
-the same construction process to create different representations.
+ * Builder Design Pattern - Creational Design Pattern
+ *
+ * Used to construct complex objects step by step.
+ * Separates object construction from its representation.
  */
+
 class BurgerMeal {
-    //Fields of the final BurgerMeal object
-    //Final ensures these fields cannot be reassigned after initialization.
+
+    // Immutable fields
     private final String bunType;
     private final String patty;
     private final boolean hasCheese;
     private final String side;
     private final String toppings;
 
-    //private constructor that takes the builder obj as a parameter(prevents direct object creation)
-    //The obj can only be created through BurgerBuilder
+    // Private constructor accepts Builder object
     private BurgerMeal(BurgerBuilder builder) {
         this.bunType = builder.bunType;
         this.patty = builder.patty;
@@ -20,72 +22,109 @@ class BurgerMeal {
         this.side = builder.side;
         this.toppings = builder.toppings;
     }
-    //Static Inner Builder class
+
+    // Getters to access private fields
+    public String getBunType() {
+        return bunType;
+    }
+
+    public String getPatty() {
+        return patty;
+    }
+
+    public boolean hasCheese() {
+        return hasCheese;
+    }
+
+    public String getSide() {
+        return side;
+    }
+
+    public String getToppings() {
+        return toppings;
+    }
+
+    // Static nested Builder class
     public static class BurgerBuilder {
+
+        // Mandatory parameters
         private final String bunType;
         private final String patty;
-        private Boolean hasCheese;
+
+        // Optional parameters
+        private boolean hasCheese;
         private String side;
         private String toppings;
 
+        // Constructor for mandatory parameters
         public BurgerBuilder(String bunType, String patty) {
+            if (bunType == null || bunType.isBlank() ||
+                    patty == null || patty.isBlank()) {
+                throw new IllegalArgumentException(
+                        "Bun type and patty are required"
+                );
+            }
+
             this.bunType = bunType;
             this.patty = patty;
         }
 
-        public BurgerBuilder WithCheese(boolean hasCheese) {
+        // Optional method to add cheese
+        public BurgerBuilder withCheese(boolean hasCheese) {
             this.hasCheese = hasCheese;
             return this;
         }
 
+        // Optional method to add side
         public BurgerBuilder withSide(String side) {
             this.side = side;
             return this;
         }
 
+        // Optional method to add toppings
         public BurgerBuilder withToppings(String toppings) {
             this.toppings = toppings;
             return this;
         }
-        //The build method that finally returns the constructed BurgerMeal
+
+        // Creates the final immutable BurgerMeal object
         public BurgerMeal build() {
-            //Passes the current builder obj to the outer class constructor
             return new BurgerMeal(this);
         }
     }
-    @Override
-    public String toString(){
-        return "BurgerMeal{" +
-                "bunType='" + bunType + '\'' +
-                ", patty='" + patty + '\'' +
-                ", hasCheese=" + hasCheese +
-                ", side='" + side + '\'' +
-                ", toppings='" + toppings + '\'' +
-                '}';
-    }
 }
+
+// Client class
 public class BuilderPattern {
+
     public static void main(String[] args) {
+
+        // Meal with mandatory parameters only
         BurgerMeal meal1 = new BurgerMeal.BurgerBuilder("Wheat", "Veg")
                 .build();
 
+        // Meal with cheese
         BurgerMeal meal2 = new BurgerMeal.BurgerBuilder("Wheat", "Veg")
-                .WithCheese(true)
+                .withCheese(true)
                 .build();
 
+        // Meal with side
         BurgerMeal meal3 = new BurgerMeal.BurgerBuilder("Wheat", "Veg")
                 .withSide("Fries")
                 .build();
 
+        // Meal with all optional parameters
         BurgerMeal meal4 = new BurgerMeal.BurgerBuilder("Wheat", "Veg")
-                .WithCheese(true)
+                .withCheese(true)
                 .withSide("Fries")
                 .withToppings("Lettuce")
                 .build();
 
-        System.out.println(meal1);
-        System.out.println(meal2);
-        System.out.println(meal3);
-        System.out.println(meal4);
+        // Display meal details using getters
+        System.out.println("Bun Type: " + meal4.getBunType());
+        System.out.println("Patty: " + meal4.getPatty());
+        System.out.println("Cheese: " + meal4.hasCheese());
+        System.out.println("Side: " + meal4.getSide());
+        System.out.println("Toppings: " + meal4.getToppings());
     }
 }
