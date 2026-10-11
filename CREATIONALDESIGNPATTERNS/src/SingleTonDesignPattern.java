@@ -22,7 +22,7 @@ class Analytics{
 
 public class SingleTonDesignPattern {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Analytics obj1 = Analytics.getInstance();
         Analytics obj2 = Analytics.getInstance();
         obj1.trackEvent("User login");
