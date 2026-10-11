@@ -1,7 +1,9 @@
 //This pattern let's you create objects without telling your code exactly which class to use.
+
 interface Logistics{
     void send();
 }
+
 //concrete classes
 class Road implements Logistics{
     @Override
