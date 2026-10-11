@@ -4,10 +4,12 @@ class Analytics{
     private Analytics(){
         System.out.println("Analytics obj created");
     }
+
     private static class Holder{
         //Static inner class
         private static final Analytics INSTANCE = new Analytics();
     }
+
     //Global Access Point
     public static Analytics getInstance(){
         return Holder.INSTANCE;
