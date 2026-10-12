@@ -1,3 +1,4 @@
+//A group of multiple factories wrapped inside a singleInstance
 interface PaymentGateway{
     void processPayment(double amount);
 }
