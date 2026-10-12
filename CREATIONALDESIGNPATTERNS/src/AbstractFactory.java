@@ -2,6 +2,7 @@ interface PaymentGateway{
     void processPayment(double amount);
 }
 
+//INDIA PAYMENT GATEWAY
 class RazorpayGateway implements PaymentGateway{
     @Override
     public void processPayment(double amount){
@@ -16,6 +17,7 @@ class PayUGateway implements PaymentGateway{
     }
 }
 
+//US Payment Gateways
 class StripeGateway implements PaymentGateway{
     @Override
     public void processPayment(double amount) {
@@ -30,6 +32,7 @@ class PayPal implements PaymentGateway{
     }
 }
 
+//Invoice products
 interface Invoice{
     void generateInvoice();
 }
@@ -48,11 +51,13 @@ class USInvoice implements Invoice{
     }
 }
 
+//Abstract Factory
 interface RegionFactory{
     PaymentGateway createPaymentGateway(String gatewayType);
     Invoice createInvoice();
 }
 
+//India Factory
 class IndiaFactory implements RegionFactory{
     @Override
     public PaymentGateway createPaymentGateway(String gatewayType) {
@@ -72,6 +77,7 @@ class IndiaFactory implements RegionFactory{
     }
 }
 
+//USA Factory
 class USFactory implements RegionFactory{
     @Override
     public PaymentGateway createPaymentGateway(String gatewayType) {
@@ -103,6 +109,8 @@ class USFactory implements RegionFactory{
             invoice.generateInvoice();
         }
     }
+
+    //MAIN
 public class AbstractFactory {
     public static void main(String[] args) {
         CheckoutService indiaCheckout =
