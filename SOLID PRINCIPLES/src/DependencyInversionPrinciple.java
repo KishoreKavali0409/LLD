@@ -34,6 +34,8 @@ class RecommendationAlgorithm{
         recommendationStrategy.recommend();
     }
 }
+
+
 public class DependencyInversionPrinciple {
     static void main(String[] args) {
         RecommendationStrategy recommendationStrategy = new RecentRecommendation();
