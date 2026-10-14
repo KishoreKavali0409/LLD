@@ -5,12 +5,6 @@
  * Separates object construction from its representation.
  */
 
-
-
-
-
-
-
 class BurgerMeal {
 
     // Immutable fields
