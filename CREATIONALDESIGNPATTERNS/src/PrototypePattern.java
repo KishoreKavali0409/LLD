@@ -7,6 +7,7 @@ interface EmailTemplate extends Cloneable{
     void send(String to);
 }
 
+//Concrete Prototype
 class WelcomeEmail implements EmailTemplate{
     private String subject;
     private String content;
@@ -43,15 +44,20 @@ class EmailTemplateRegistry{
                 "Welcome",
                 new WelcomeEmail()
         );
+        //Add more templates here
     }
     public static EmailTemplate getTemplate(String type){
         EmailTemplate template = templates.get(type);
         if(template == null){
             throw new IllegalArgumentException("Template not found:" + type);
         }
+        //Clone instead of returning the orginal object
+        // This prevents modifications to the original prototype
         return template.clone();
     }
 }
+
+//CLIENT
 public class PrototypePattern {
     static void main(String[] args) {
         EmailTemplate welcomeEmail = EmailTemplateRegistry.getTemplate("Welcome");
