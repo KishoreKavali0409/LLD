@@ -1,8 +1,9 @@
-
+// Target Interface
 interface PaymentGateway{
     void pay(String orderId, double amount);
 }
 
+//Existing/Compatible implementation
 class PayuGateway implements PaymentGateway{
     @Override
     public void pay(String orderId, double amount) {
@@ -10,6 +11,7 @@ class PayuGateway implements PaymentGateway{
     }
 }
 
+//Existing third party API
 class RazorpayAPI{
     public void makePayment(String invoiceId, double amountInRupees){
         System.out.println("Paid: rs" + amountInRupees + "using razorpay for invoice:" + invoiceId);
@@ -40,8 +42,10 @@ class CheckoutService{
     }
 }
 
+//Main
 public class AdapterPattern {
     static void main(String[] args) {
+        //Using payU directly
         CheckoutService payUCheck = new CheckoutService(new PayuGateway());
         payUCheck.checkout("ORDER101", 500);
         System.out.println();
