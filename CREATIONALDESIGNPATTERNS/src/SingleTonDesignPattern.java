@@ -20,6 +20,7 @@ class Analytics{
     }
 }
 
+//Main
 public class SingleTonDesignPattern {
 
     public static void main(String[] args) {
