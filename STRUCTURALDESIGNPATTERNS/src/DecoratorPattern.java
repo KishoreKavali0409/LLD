@@ -73,15 +73,19 @@ class StuffedCrust extends PizzaDecorator{
 //Main
 public class DecoratorPattern {
     static void main(String[] args) {
+        //Basic pizza
         Pizza margherita = new MargheritaPizza();
         System.out.println(margherita.getDescription() + " =rs " + margherita.getCost());
         System.out.println();
+        //Margherita + Extracheese
         Pizza cheesePizza = new ExtraCheese(new MargheritaPizza());
         System.out.println(cheesePizza.getDescription() + " =rs " + cheesePizza.getCost());
         System.out.println();
+        //Margherita + Extracheese + Olive
         Pizza cheeseOlivePizza = new Olives(new ExtraCheese(new MargheritaPizza()));
         System.out.println(cheeseOlivePizza.getDescription() + " =rs " + cheeseOlivePizza.getCost());
         System.out.println();
+        //Margherita + Extracheese + Olive + Stuffed Crust
         Pizza fullyLoadedPizza = new StuffedCrust(new Olives(new ExtraCheese(new MargheritaPizza())));
         System.out.println(fullyLoadedPizza.getDescription() + " =rs " + fullyLoadedPizza.getCost());
     }
