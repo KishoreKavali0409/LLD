@@ -3,6 +3,7 @@ interface Pizza{
     String getDescription();
     String getCost();
 }
+
 //Concrete Component
 class MargheritaPizza implements Pizza{
     @Override
@@ -15,6 +16,7 @@ class MargheritaPizza implements Pizza{
         return "200.0";
     }
 }
+
 //Decorator Abstract Class
 abstract class PizzaDecorator implements Pizza{
     protected Pizza pizza;
@@ -22,6 +24,7 @@ abstract class PizzaDecorator implements Pizza{
         this.pizza = pizza;
     }
 }
+
 //Concrete Decorator - Extra cheese
 class ExtraCheese extends PizzaDecorator{
     public ExtraCheese(Pizza pizza){
@@ -38,6 +41,7 @@ class ExtraCheese extends PizzaDecorator{
         return pizza.getCost() + 40.0;
     }
 }
+
 //Concrete Decorator - Olives
 class Olives extends PizzaDecorator{
     public Olives(Pizza pizza){
@@ -54,6 +58,7 @@ class Olives extends PizzaDecorator{
         return pizza.getCost() + 50.0;
     }
 }
+
 //Concrete Decorator - StuffedCrust
 class StuffedCrust extends PizzaDecorator{
     public StuffedCrust(Pizza pizza){
@@ -70,6 +75,7 @@ class StuffedCrust extends PizzaDecorator{
         return pizza.getCost() + 80.0;
     }
 }
+
 //Main
 public class DecoratorPattern {
     static void main(String[] args) {
