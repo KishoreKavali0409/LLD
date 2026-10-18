@@ -4,6 +4,7 @@ of interfaces in a subsystems
 
 Facade = One simple interface hiding multiple complex subsystem operations
  */
+
 class PaymentService{
     public void makePayment(String accountId, double amount){
         System.out.println("Payment of" + amount +
@@ -60,6 +61,7 @@ public class FacadePattern {
 
         System.out.println("Movie ticket booking completed successfully");
     }
+
  */
 //FACADE
 class MovieBookingFacade{
@@ -68,6 +70,7 @@ class MovieBookingFacade{
     private NotificationService notificationService;
     private LoyaltyPointsService loyaltyPointsService;
     private TicketService ticketService;
+
     public MovieBookingFacade() {
         this.paymentService = new PaymentService();
         this.seatReservationService =  new SeatReservationService();
@@ -75,12 +78,14 @@ class MovieBookingFacade{
         this.loyaltyPointsService = new LoyaltyPointsService();
         this.ticketService = new TicketService();
     }
+
     public void bookMovieTicket(
             String accountId,
             String movieId,
             String seatNumber,
             String userEmail,
             double amount){
+
         // Make payment
         paymentService.makePayment(accountId, amount);
         // Reserve seat
@@ -92,9 +97,12 @@ class MovieBookingFacade{
         // Send Confirmation
         notificationService.sendBooking(userEmail);
         System.out.println("Movie ticket booking completed successfully");
+
     }
 }
+
 //Client code
+
 public class FacadePattern {
     static void main(String[] args) {
         MovieBookingFacade facade = new MovieBookingFacade();
