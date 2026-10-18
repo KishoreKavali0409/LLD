@@ -20,13 +20,13 @@ class NotificationService{
 
 class LoyaltyPointsService{
     public void addPoints(String accountId, int Points){
-        System.out.println(Points + "Loyalty pointsadded to account " + accountId);
+        System.out.println(Points + "Loyalty points added to account " + accountId);
     }
 }
 
 class TicketService{
     public void generateTicket(String movieId, String seatNumber){
-        System.out.println("Ticker generated for movie" + movieId +
+        System.out.println("Ticket generated for movie" + movieId +
                 ", Seat:" + seatNumber);
     }
 }
