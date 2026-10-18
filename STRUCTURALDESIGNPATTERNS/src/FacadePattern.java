@@ -1,3 +1,7 @@
+/*
+This is a structural design pattern that provides a simplified, unified interface to a set of interface to a set
+of interfaces in a subsystems
+ */
 class PaymentService{
     public void makePayment(String accountId, double amount){
         System.out.println("Payment of" + amount +
