@@ -1,4 +1,3 @@
-//Without Facade
 class PaymentService{
     public void makePayment(String accountId, double amount){
         System.out.println("Payment of" + amount +
@@ -31,6 +30,31 @@ class TicketService{
                 ", Seat:" + seatNumber);
     }
 }
+
+//CODE Looks without facade
+/*
+public class FacadePattern {
+    public static void main(String[] args) {
+
+        PaymentService payment = new PaymentService();
+        SeatReservationService seat = new SeatReservationService();
+        TicketService ticket = new TicketService();
+        LoyaltyPointsService loyalty = new LoyaltyPointsService();
+        NotificationService notification = new NotificationService();
+
+        payment.makePayment("ACC101", 250);
+
+        seat.reserveSeat("MOVIE101", "A10");
+
+        ticket.generateTicket("MOVIE101", "A10");
+
+        loyalty.addPoints("ACC101", 50);
+
+        notification.sendBooking("kishore@gmail.com");
+
+        System.out.println("Movie ticket booking completed successfully");
+    }
+ */
 
 class MovieBookingFacade{
     private PaymentService paymentService;
