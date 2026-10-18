@@ -61,7 +61,7 @@ public class FacadePattern {
         System.out.println("Movie ticket booking completed successfully");
     }
  */
-
+//FACADE
 class MovieBookingFacade{
     private PaymentService paymentService;
     private SeatReservationService seatReservationService;
@@ -81,15 +81,20 @@ class MovieBookingFacade{
             String seatNumber,
             String userEmail,
             double amount){
+        // Make payment
         paymentService.makePayment(accountId, amount);
+        // Reserve seat
         seatReservationService.reserveSeat(movieId, seatNumber);
+        //Generate Ticket
         ticketService.generateTicket(movieId, seatNumber);
+        // Add loyalty points
         loyaltyPointsService.addPoints(accountId, 50);
+        // Send Confirmation
         notificationService.sendBooking(userEmail);
         System.out.println("Movie ticket booking completed successfully");
     }
 }
-
+//Client code
 public class FacadePattern {
     static void main(String[] args) {
         MovieBookingFacade facade = new MovieBookingFacade();
