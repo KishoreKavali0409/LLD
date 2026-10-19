@@ -15,6 +15,7 @@ interface CartItem{
     void display(String indent);
 }
 
+//Leaf
 class Product implements CartItem{
     private String name;
     private double price;
@@ -34,6 +35,7 @@ class Product implements CartItem{
     }
 }
 
+// Composite
 class ProductBundle implements CartItem {
     private String bundleName;
     private List<CartItem> items = new ArrayList<>();
@@ -64,6 +66,7 @@ class ProductBundle implements CartItem {
         }
     }
 
+    // Client
     public class CompositePattern {
 
     static void main(String[] args) {
