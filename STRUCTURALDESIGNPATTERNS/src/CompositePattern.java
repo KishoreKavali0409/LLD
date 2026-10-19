@@ -6,12 +6,15 @@ Group of objects(composite)
 
 Composite = Treat individual objects and collections / groups of objects in the same way.
  */
+
 import java.util.ArrayList;
 import java.util.List;
+
 interface CartItem{
     double getPrice();
     void display(String indent);
 }
+
 class Product implements CartItem{
     private String name;
     private double price;
@@ -19,6 +22,7 @@ class Product implements CartItem{
         this.name = name;
         this.price = price;
     }
+
     @Override
     public double getPrice() {
         return price;
@@ -50,6 +54,7 @@ class ProductBundle implements CartItem {
         }
         return total;
     }
+
         @Override
         public void display (String indent){
             System.out.println(indent + "Bundle: " + bundleName);
@@ -58,7 +63,9 @@ class ProductBundle implements CartItem {
             }
         }
     }
-public class CompositePattern {
+
+    public class CompositePattern {
+
     static void main(String[] args) {
         CartItem book = new Product("Atomic habits", 499);
         CartItem phone = new Product("iPhone 15", 790000);
