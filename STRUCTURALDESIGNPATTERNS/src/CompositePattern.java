@@ -1,3 +1,11 @@
+/*
+Composite pattern is a structured design pattern that let's us compose objects into tree-like hierarchial structural and treatt.
+
+Individual objects(leaf)
+Group of objects(composite)
+
+Composite = Treat individual objects and collections / groups of objects in the same way.
+ */
 import java.util.ArrayList;
 import java.util.List;
 interface CartItem{
