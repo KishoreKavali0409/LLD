@@ -1,8 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
+//Subject
 interface VideoDownloader{
     String downloadVideo(String videoUrl);
 }
+//Real Subject
 class RealVideoDownloader implements VideoDownloader{
     @Override
     public String downloadVideo(String videoUrl) {
@@ -10,6 +12,7 @@ class RealVideoDownloader implements VideoDownloader{
         return "Video content from" + videoUrl;
     }
 }
+//Proxy
 class CachedVideoDownloader implements VideoDownloader{
     private RealVideoDownloader realVideoDownloader;
     private Map<String, String> cache;
@@ -36,9 +39,9 @@ class CachedVideoDownloader implements VideoDownloader{
 public class ProxyPattern {
     static void main(String[] args) {
         VideoDownloader videoDownloader = new CachedVideoDownloader();
-
+        //First request -> cache miss -> Real downloader
         videoDownloader.downloadVideo("pattern_url");
-
+        //second request -> cache hit ->
         videoDownloader.downloadVideo("pattern_url");
     }
 }
