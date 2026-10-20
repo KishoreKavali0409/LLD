@@ -1,3 +1,13 @@
+/*
+Proxy pattern is a structural design pattern that provides a surrogate/placeholder object for another object and
+control access to the real object.
+
+Key idea:
+        Instead of the client interacting directly with the real object, it interacts with a proxy, which acts on behalf
+        of the real object.
+        The proxy and real object implement the same interface, so the client doesn't need to know whether it is talking
+        to the proxy or the real object
+ */
 import java.util.HashMap;
 import java.util.Map;
 //Subject
