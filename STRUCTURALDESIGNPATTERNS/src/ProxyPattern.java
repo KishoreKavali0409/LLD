@@ -67,3 +67,10 @@ public class ProxyPattern {
         videoDownloader.downloadVideo("pattern_url");
     }
 }
+
+/*
+Behind the scene:
+First Request: Client -> CachedVideoDownloader -> Cache doesn't contain URL -> RealVideoDownloader -> Download video -> Store result in cache
+Second Request: Client -> CachedVideoDownloader -> Cache contains URL -> Return cached video
+The expensive RealVideoDownloader is therefore not called again
+ */
