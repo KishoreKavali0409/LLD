@@ -8,12 +8,15 @@ Key idea:
         The proxy and real object implement the same interface, so the client doesn't need to know whether it is talking
         to the proxy or the real object
  */
+
 import java.util.HashMap;
 import java.util.Map;
+
 //Subject
 interface VideoDownloader{
     String downloadVideo(String videoUrl);
 }
+
 //Real Subject
 class RealVideoDownloader implements VideoDownloader{
     @Override
@@ -22,6 +25,7 @@ class RealVideoDownloader implements VideoDownloader{
         return "Video content from" + videoUrl;
     }
 }
+
 //Proxy
 class CachedVideoDownloader implements VideoDownloader{
     private RealVideoDownloader realVideoDownloader;
@@ -38,19 +42,25 @@ class CachedVideoDownloader implements VideoDownloader{
             System.out.println("Returning cached video for: " + videoUrl);
             return cache.get(videoUrl);
         }
+
         //cache miss
         System.out.println("Cache miss downloading ");
         String video = realVideoDownloader.downloadVideo(videoUrl);
+
         //Store download vide in cache
         cache.put(videoUrl, video);
         return video;
     }
 }
+
+//Main
 public class ProxyPattern {
     static void main(String[] args) {
         VideoDownloader videoDownloader = new CachedVideoDownloader();
+
         //First request -> cache miss -> Real downloader
         videoDownloader.downloadVideo("pattern_url");
+
         //second request -> cache hit ->
         videoDownloader.downloadVideo("pattern_url");
     }
