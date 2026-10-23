@@ -1,16 +1,3 @@
 public class IteratorPattern {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
