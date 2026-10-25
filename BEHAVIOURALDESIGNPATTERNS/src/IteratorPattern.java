@@ -69,3 +69,15 @@ public class IteratorPattern {
         }
     }
 }
+
+/*
+Iterator -> Traverse a collection without knowing how the collection is internally stored
+YoutubePlaylist
+| -> LLD Tutorial
+| -> System Design Basics
+| -> Design Patterns
+
+CLient should not know what internally they use
+iterator.hasNext()
+iterator.next()
+ */
