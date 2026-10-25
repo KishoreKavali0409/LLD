@@ -1,3 +1,8 @@
+/*
+Iterator Pattern is a behavioral design pattern that provides a standard way to traverse elements
+of a collection sequentially without exposing the collection's internal structure.
+ */
+
 import java.util.*;
 
 class Video{
