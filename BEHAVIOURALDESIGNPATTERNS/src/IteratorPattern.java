@@ -5,6 +5,7 @@ of a collection sequentially without exposing the collection's internal structur
 
 import java.util.*;
 
+//Element
 class Video{
     private String title;
 
@@ -17,11 +18,13 @@ class Video{
     }
 }
 
+//Iterator Interface
 interface PlaylistIterator{
     boolean hasNext();
     Video next();
 }
 
+//Concrete Iterator
 class YoutubePlaylistIterator implements PlaylistIterator{
     private List<Video> videos;
     private int position;
@@ -42,10 +45,12 @@ class YoutubePlaylistIterator implements PlaylistIterator{
     }
 }
 
+//Aggregate Interface
 interface Playlist{
     PlaylistIterator createIterator();
 }
 
+//Concrete aggregate
 class YoutubePlaylist implements Playlist{
     private List<Video> videos = new ArrayList<>();
     public void addVideo(Video video){
@@ -58,6 +63,7 @@ class YoutubePlaylist implements Playlist{
     }
 }
 
+//Client
 public class IteratorPattern {
     static void main(String[] args) {
         YoutubePlaylist playlist = new YoutubePlaylist();
