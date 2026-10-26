@@ -1,3 +1,8 @@
+/*
+Observer pattern is a behavioural design pattern that establishes a one to many dependency between objects
+(When the subject changes state, all it's registered observers are automatically notified and updated)
+ */
+
 import java.util.*;
 
 // Observer Pattern
