@@ -1,14 +1,19 @@
 import java.util.*;
 
 interface Subscriber{
+
     void update(String videoTitle);
+
 }
 
 class EmailSubscriber implements Subscriber{
+
     private String email;
+
     public EmailSubscriber(String email){
         this.email = email;
         }
+
     @Override
     public void update(String videoTitle){
         System.out.println("Email sent to " + email + ":New video uploaded" + videoTitle);
@@ -16,7 +21,9 @@ class EmailSubscriber implements Subscriber{
 }
 
 class MobileAppSubscriber implements Subscriber{
+
     private String username;
+
     public MobileAppSubscriber(String username){
         this.username = username;
     }
@@ -36,6 +43,7 @@ interface Channel{
 class YoutubeChannel implements Channel{
     private List<Subscriber> subscribers = new ArrayList<>();
     private String channelName;
+
     public YoutubeChannel(String channelName){
         this.channelName = channelName;
     }
@@ -56,6 +64,7 @@ class YoutubeChannel implements Channel{
             subscriber.update(videoTitle);
         }
     }
+
     public void uploadVideo(String videoTitle){
         System.out.println(channelName + "uploaded:" + videoTitle);
         notifySubscribers(videoTitle);
