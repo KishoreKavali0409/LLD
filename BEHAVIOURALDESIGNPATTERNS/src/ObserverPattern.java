@@ -90,3 +90,18 @@ public class ObserverPattern {
         tuf.uploadVideo("Testing video");
     }
 }
+
+/*
+                                    Youtube Channel
+                                        |
+Email                                  Mobile                           Other
+Sub                                    Sub                              Sub
+
+Channel uploads a video -> notify all subs -> Email and mobile notification
+(Youtube Channel does not need to know the concrete implementation of each subscriber
+It only knows subscriber interface.
+
+An observer pattern may trigger another operation
+subject -> obserer A -> Another subject -> Observer B
+(This creates different event chains)
+ */
