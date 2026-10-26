@@ -1,11 +1,13 @@
 import java.util.*;
 
+// Observer Pattern
 interface Subscriber{
 
     void update(String videoTitle);
 
 }
 
+//Concrete Obserser
 class EmailSubscriber implements Subscriber{
 
     private String email;
@@ -20,6 +22,7 @@ class EmailSubscriber implements Subscriber{
     }
 }
 
+//Concrete Obserser
 class MobileAppSubscriber implements Subscriber{
 
     private String username;
@@ -34,12 +37,14 @@ class MobileAppSubscriber implements Subscriber{
     }
 }
 
+//Subject
 interface Channel{
     void subscribe(Subscriber subscriber);
     void unsubscribe(Subscriber subscriber);
     void notifySubscribers(String videoTitle);
 }
 
+//Concrete Subject
 class YoutubeChannel implements Channel{
     private List<Subscriber> subscribers = new ArrayList<>();
     private String channelName;
@@ -71,6 +76,7 @@ class YoutubeChannel implements Channel{
     }
 }
 
+//Client
 public class ObserverPattern {
    public static void main(String[] args) {
         YoutubeChannel tuf = new YoutubeChannel("ABC");
