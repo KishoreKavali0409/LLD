@@ -7,9 +7,7 @@ import java.util.*;
 
 // Observer Pattern
 interface Subscriber{
-
     void update(String videoTitle);
-
 }
 
 //Concrete Obserser
