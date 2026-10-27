@@ -12,9 +12,7 @@ interface Subscriber{
 
 //Concrete Obserser
 class EmailSubscriber implements Subscriber{
-
     private String email;
-
     public EmailSubscriber(String email){
         this.email = email;
         }
