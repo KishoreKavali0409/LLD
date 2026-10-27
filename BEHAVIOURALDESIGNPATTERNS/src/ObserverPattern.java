@@ -25,9 +25,7 @@ class EmailSubscriber implements Subscriber{
 
 //Concrete Obserser
 class MobileAppSubscriber implements Subscriber{
-
     private String username;
-
     public MobileAppSubscriber(String username){
         this.username = username;
     }
