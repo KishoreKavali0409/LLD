@@ -2,10 +2,12 @@
 Strategy Pattern is a behavioural design pattern that defines a family of algorithms, encapsulates each algorithm
 in a separate class, and makes them interchangable at runtime
  */
+
 interface MatchingStrategy{
     void match(String riderLocation);
 }
 
+//concrete strategy 1
 class NearestDriverStrategy implements MatchingStrategy{
     @Override
     public void match(String riderLocation) {
@@ -13,6 +15,7 @@ class NearestDriverStrategy implements MatchingStrategy{
     }
 }
 
+//concrete strategy 2
 class AirportQueueStratrgy implements MatchingStrategy{
     @Override
     public void match(String riderLocation) {
@@ -20,6 +23,7 @@ class AirportQueueStratrgy implements MatchingStrategy{
     }
 }
 
+//concrete strategy 3
 class SurgePriorityStrategy implements MatchingStrategy{
     @Override
     public void match(String riderLocation) {
@@ -27,6 +31,7 @@ class SurgePriorityStrategy implements MatchingStrategy{
     }
 }
 
+//context
 class RideMatchingService{
     private MatchingStrategy strategy;
 
@@ -42,6 +47,7 @@ class RideMatchingService{
     }
 }
 
+//client
 public class StrategyPattern {
     static void main(String[] args) {
         RideMatchingService rideMatchingService = new RideMatchingService(new NearestDriverStrategy());
