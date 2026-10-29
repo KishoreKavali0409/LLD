@@ -1,3 +1,7 @@
+/*
+Strategy Pattern is a behavioural design pattern that defines a family of algorithms, encapsulates each algorithm
+in a separate class, and makes them interchangable at runtime
+ */
 interface MatchingStrategy{
     void match(String riderLocation);
 }
