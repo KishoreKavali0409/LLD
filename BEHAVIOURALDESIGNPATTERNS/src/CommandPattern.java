@@ -1,3 +1,8 @@
+/*
+The command pattern is a behavioral design pattern that encapsulates a request as an object, allowing you to parameterize
+clients with different a request as an object, allowing you to parameterize clients with different requests queue
+or log requests, and support undoable operations.
+ */
 import java.util.Arrays;
 class Light{
     public void on(){
@@ -100,13 +105,21 @@ class RemoteControl{
             System.out.println("No command to undo");
         }
     }
-}
+    public void pressUndo() {
+        if (lastCommand != null) {
+            lastCommand.undo();
+            lastCommand = null;
+        } else {
+            System.out.println("Nothing to undo");
+        }
+    }
+    }
 public class CommandPattern {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Light light = new Light();
         AirCondition ac = new AirCondition();
         Command lightOn = new LightOnCommand(light);
-        Command lightOff = new LightOnCommand(light);
+        Command lightOff = new LightOffCommand(light);
         Command acOn = new ACOnCommand(ac);
         Command acOff = new ACOffCommand(ac);
         RemoteControl remote = new RemoteControl(4);
