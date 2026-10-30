@@ -2,6 +2,10 @@
 The command pattern is a behavioral design pattern that encapsulates a request as an object, allowing you to parameterize
 clients with different a request as an object, allowing you to parameterize clients with different requests queue
 or log requests, and support undoable operations.
+
+Command = Turn a method call into an object.
+
+* Instead of directly calling a receiver's method, the client creates a command object and the invoker executes it
  */
 import java.util.Arrays;
 class Light{
