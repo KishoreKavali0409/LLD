@@ -1,27 +1,36 @@
 abstract class NotificationSender{
+    //Final templatemethod
     public final void send(String to, String rawMessage){
         rateLimitCheck(to);
         validateRecipient(to);
         String formatted = formatMessage(rawMessage);
         preSendAuditLog(to, formatted);
+        // Logic not common
         String composedMessage = composeMessage(formatted);
         sendMessage(to, composedMessage);
+        // Common
         postSendAudit(to);
     }
+    //common step 1
     private void rateLimitCheck(String to){
         System.out.println("Checking rate limit for:" + to);
     }
+    //common step 2
     private void validateRecipient(String to){
         System.out.println("Checking rate limit for:" + to);
     }
+    //common step 3
     private String formatMessage(String message){
         return message.trim();
     }
+    //common step 4
     private void preSendAuditLog(String to, String message){
         System.out.println("Logging before send" + message + "to" + to);
     }
+    //hooks for subclass
     protected abstract String composeMessage(String formattedMessage);
     protected abstract void sendMessage(String to, String message);
+    // Step 5 (optional hooks)
     protected void postSendAudit(String to){
         System.out.println("Analytics updated for" + to);
     }
