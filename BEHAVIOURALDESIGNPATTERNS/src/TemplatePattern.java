@@ -54,14 +54,6 @@ class EmailNotification extends NotificationSender{
     }
 }
 
-
-
-
-
-
-
-
-
 class SMSNotification extends NotificationSender{
     @Override
     protected String composeMessage(String formattedMessage) {
