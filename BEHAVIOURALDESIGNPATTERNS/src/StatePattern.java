@@ -16,11 +16,13 @@ class OrderContext{
         return currentState.getStateName();
     }
 }
+
 interface OrderState{
     void next(OrderContext context);
     void cancel(OrderContext context);
     String getStateName();
 }
+
 class OrderPlacedState implements OrderState{
     @Override
     public void next(OrderContext context) {
@@ -58,6 +60,7 @@ class PreparingState implements OrderState{
         return "PREPARING";
     }
 }
+
 class OutForDeliveryState implements OrderState{
     @Override
     public void next(OrderContext context) {
@@ -75,6 +78,7 @@ class OutForDeliveryState implements OrderState{
         return "OUT_FOR_DELIVERY";
     }
 }
+
 class DeliveredState implements OrderState{
     @Override
     public void next(OrderContext context) {
@@ -92,6 +96,7 @@ class DeliveredState implements OrderState{
         return "DELIVERED";
     }
 }
+
 class CancelledState implements OrderState{
     @Override
     public void next(OrderContext context) {
@@ -108,8 +113,9 @@ class CancelledState implements OrderState{
         return "CANCELLED";
     }
 }
+
 public class StatePattern {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         OrderContext order = new OrderContext();
         System.out.println("Current State: " + order.getCurrentState());
         order.next();
