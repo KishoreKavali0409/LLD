@@ -1,3 +1,6 @@
+/*
+State pattern is a behavioral design pattern that let's an object change it's behaviour when it's internal state changes
+ */
 class OrderContext{
     private OrderState currentState;
     public OrderContext() {
