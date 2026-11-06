@@ -1,3 +1,6 @@
+/*
+It is a behavioural design pattern that transforms particular behaviors into standalone objects calle handlers
+ */
 abstract class SupportHandler{
     protected SupportHandler nextHandler;
 
