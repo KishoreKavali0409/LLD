@@ -1,6 +1,7 @@
 /*
 It is a behavioural design pattern that transforms particular behaviors into standalone objects calle handlers
  */
+
 abstract class SupportHandler{
     protected SupportHandler nextHandler;
 
@@ -9,6 +10,7 @@ abstract class SupportHandler{
     }
     public abstract void handleRequest(String requestType);
 }
+
 class GeneralSupport extends SupportHandler{
     public void handleRequest(String requestType){
         if(requestType.equalsIgnoreCase("general")){
@@ -18,6 +20,7 @@ class GeneralSupport extends SupportHandler{
         }
     }
 }
+
 class BillingSupport extends SupportHandler{
     public void handleRequest(String requestType) {
         if(requestType.equalsIgnoreCase("refund")){
@@ -27,6 +30,7 @@ class BillingSupport extends SupportHandler{
         }
     }
 }
+
 class TechnicalSupport extends SupportHandler{
     public void handleRequest(String requestType){
         if(requestType.equalsIgnoreCase("technical")){
@@ -36,6 +40,7 @@ class TechnicalSupport extends SupportHandler{
         }
     }
 }
+
 class DeliverySupport extends SupportHandler{
     public void handleRequest(String requestType) {
         if(requestType.equalsIgnoreCase("delivery")){
@@ -45,7 +50,9 @@ class DeliverySupport extends SupportHandler{
         }
     }
 }
+
 public class ChainOfResponsibility {
+
     public static void main(String[] args) {
         SupportHandler general = new GeneralSupport();
         SupportHandler billing = new BillingSupport();
@@ -55,5 +62,6 @@ public class ChainOfResponsibility {
         billing.setNextHandler(technical);
         technical.setNextHandler(delivery);
         general.handleRequest("delivery");
+
     }
 }
