@@ -43,7 +43,7 @@ class DeliverySupport extends SupportHandler{
     }
 }
 public class ChainOfResponsibility {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         SupportHandler general = new GeneralSupport();
         SupportHandler billing = new BillingSupport();
         SupportHandler technical = new TechnicalSupport();
