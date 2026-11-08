@@ -1,3 +1,7 @@
+/*
+Visitor is a behavioral pattern that lets you add new operations to existing class hierarchies
+without modifying the classes themselves
+ */
 import java.util.*;
 interface Item{
     void accept(ItemVisitor visitor);
