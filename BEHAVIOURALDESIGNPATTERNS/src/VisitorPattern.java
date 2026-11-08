@@ -67,7 +67,7 @@ class ShippingCustomer implements ItemVisitor{
     }
 }
 public class VisitorPattern {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         List<Item> items = new ArrayList<>();
         items.add(new PhysicalProduct("shoes", 100));
         items.add(new DigitalProduct("shoes", 100));
