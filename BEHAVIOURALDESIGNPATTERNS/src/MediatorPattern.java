@@ -1,4 +1,6 @@
-
+/*
+This pattern centralizes complex communication between objects into a single mediator object
+ */
 import java.util.*;
 
 interface DocumentSessionMediator {
