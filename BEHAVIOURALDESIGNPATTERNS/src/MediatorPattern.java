@@ -8,8 +8,6 @@ interface DocumentSessionMediator {
     void join(User user);
 }
 
-
-
 class CollaborativeDocument implements DocumentSessionMediator {
 
     private List<User> users = new ArrayList<>();
