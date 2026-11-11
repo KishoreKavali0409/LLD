@@ -1,4 +1,4 @@
-//A class should have only one reason to change, if there are multiple responsiblities one change might break other
+//A class should have only one reason to change, if there are multiple responsibilities one change might break other
 class User {
     private String name;
     private String email;
@@ -41,3 +41,14 @@ public class SingleResponsilibilityPrinciple {
         emailService.sendWelcomeEmail(user);
     }
 }
+/*
+Benefits :
+- Improved Maintainability
+- Better test coverage
+- Lower risk in changes
+- Reusable modules
+
+Common Mistakes:
+- Putting DB logic & business logic in the same class
+- UI Code coupled with logic
+ */
