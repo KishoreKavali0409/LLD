@@ -3,7 +3,6 @@ interface TaxCalculator{
     double amountAfterTax(double amount);
 }
 
-
 class IndiaTax implements TaxCalculator{
     public double amountAfterTax(double amount) {
         return (amount + 0.18 * amount);
