@@ -28,3 +28,10 @@ public class OpenClosedPrinciple {
         invoiceService.calculate();
     }
 }
+/*
+When to apply:
+- When you have business rules that are likely to change or expand.
+- When you are building a plug in system.
+- When your codebase is becoming a ' GOD CLASS ' with a lot of conditionals
+
+ */
