@@ -1,4 +1,9 @@
 //If S is a subtype of T, then objects of T may be replaced with objects of S without altering any of the desirable properties of that person
+/*
+Simple terms:
+If class B is a subtype of class A, then you should be able to use B anywhere you used A, and the behavior should
+remain constant.
+ */
 class Notification{
     public void sendNotification(){
         System.out.println("Email sent");
