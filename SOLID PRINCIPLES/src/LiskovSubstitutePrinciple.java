@@ -24,5 +24,20 @@ public class LiskovSubstitutePrinciple {
         Notification notification = new WhatsappTextNotification();
         notification.sendNotification();
     }
-
 }
+/*
+Why does LSP Matter:
+- Broken functionality when subclasses replaces parents
+- Fragile inheritance hierarchies
+- Bugs that are hard to detect
+- Client code being tightly coupled to specific types
+
+How to Spot LSP violations:
+- Subclasses throwing unexpected exceptions for base class methods
+- Sub class changes behavior so much that the code fails
+
+Key principles:
+- Design by contract
+- Avoid over inheritance, use composition
+- Refactor early
+ */
