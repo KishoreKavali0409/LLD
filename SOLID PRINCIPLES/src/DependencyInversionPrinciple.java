@@ -1,4 +1,7 @@
-//High level modules should not depend on low level modules
+/*
+Definition:
+High level modules should not depend on low level modules both should depend on abstraction, abstraction should ot depend on details. Details should depend on abstraction.
+ */
 interface RecommendationStrategy{
     void recommend();
 }
