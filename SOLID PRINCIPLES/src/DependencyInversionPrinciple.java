@@ -47,3 +47,9 @@ public class DependencyInversionPrinciple {
         recommendationAlgorithm.recommend();
     }
 }
+
+/*
+Benefits:
+- Loosely coupled to interface
+
+ */
