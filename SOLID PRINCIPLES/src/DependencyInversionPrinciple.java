@@ -51,5 +51,8 @@ public class DependencyInversionPrinciple {
 /*
 Benefits:
 - Loosely coupled to interface
-
+- Just add new implementation.
+- Easy to mock unit tests.
+- Abstraction.
+- Fully open/closed friendly.
  */
