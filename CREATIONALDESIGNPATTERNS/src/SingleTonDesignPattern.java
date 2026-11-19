@@ -38,3 +38,13 @@ public class SingleTonDesignPattern {
         }
     }
 }
+/*
+- Only one instance throughout the application's lifecycle
+- A global access point is provided to access that instance
+
+Why do we need it:-
+A singleton is useful when an object:
+- Should exist only once because of global state
+- Represents a shared resource
+- Needs to be accessed from multiple parts of the application
+ */
