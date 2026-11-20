@@ -47,3 +47,24 @@ public class FactoryPattern {
         logistics.send();
     }
 }
+
+/*
+Why we use it:
+- When the client does not know what exactly class of the object it needs.
+- To decouple object creation logic from client code.
+- When object creation is complex
+
+Real life: Ask factory to create laptops for me.
+
+Pros:
+- Loose coupling
+- Enhances extensibility (OCP)
+- Centralizes object creation (SRP)
+- Increases flexibility
+- Improves code reusability
+
+Cons:
+- Increases complexity
+- Learning curve
+- Code overhead
+ */
