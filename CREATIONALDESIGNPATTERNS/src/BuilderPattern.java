@@ -128,3 +128,26 @@ public class BuilderPattern {
         System.out.println("Toppings: " + meal4.getToppings());
     }
 }
+/*
+When to use:
+- When an object has multiple fields and object creation is getting complex
+- When immutability is preferred (you don't want clients mutating values after creation)
+- When you want clean, readable, and maintainable object creation
+- Great for complex configurations
+
+When to avoid:
+- When the class is very small (1 to 3 fields), Introducing a builder here is overengineering
+- When you do not need object customization or immutability
+
+Pros:
+1. Avoid constructor telescoping
+2. Ensures immutability
+3. Clean & Readable
+
+Cons:
+1. Tough to set up
+2. Overkill to small class
+3. Extra code overhead
+
+Ex: Lombok, Amazon cart
+ */
