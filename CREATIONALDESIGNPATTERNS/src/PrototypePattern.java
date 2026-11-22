@@ -111,4 +111,16 @@ Cons:
    serialization
    custom copy method
    depending on the situation
+
+When to use:
+1. Object creation is expensive
+2. You need many similar objects
+3. Objects differ only slightly
+4. You want runtime-defined prototypes
+
+When to avoid:
+1. Object creation is cheap
+2. Object has complex mutable nested state
+3. Objects aren't similar
+4. You only create a few objects
  */
