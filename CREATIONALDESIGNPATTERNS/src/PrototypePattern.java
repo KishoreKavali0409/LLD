@@ -1,5 +1,5 @@
 /*
-Prototype is a creational design pattern used when creating an object from scratch is costly or time - consuming,
+Prototype is a creational design pattern used when creating an object from scratch is costly or time-consuming,
 so instead of creating a new object, we clone an existing object.
 
 Expensive object -> prototype -> clone() ->New obj
