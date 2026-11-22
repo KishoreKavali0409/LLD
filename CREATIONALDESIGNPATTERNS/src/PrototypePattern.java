@@ -79,3 +79,36 @@ public class PrototypePattern {
         System.out.println(welcomeEmail2);
     }
 }
+/*
+Pros:
+1. Avoids expensive object creation(cloning existing objects can be cheaper)
+   -> database calls
+   -> network calls
+   -> complex calculating
+   -> large initializations
+   -> passing / configurations
+2. Faster object creation.
+3. Reduces subclassing (Map<String, EmailTemplate>).
+4. Runtime object configuration.
+5. Good for creating similar objects
+
+Cons:
+1. Deep cloning can be complicated
+    if your object contains nested objects:
+    class order{
+    Customer customer;
+    Address address;
+    List<Item> items;
+    }
+    simply using super.clone();
+    doesn't automatically create independent copies of all nested mutable objects.
+    you may need deep copying.
+2. Circular reference can make cloning difficult.(A-> B -> C -> D)
+3. Clone implementation can be complex
+4. Java cloneable mechanism has limitations alternatives include:
+   copy constructor
+   factory
+   serialization
+   custom copy method
+   depending on the situation
+ */
