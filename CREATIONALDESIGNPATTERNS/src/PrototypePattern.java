@@ -1,6 +1,10 @@
 /*
 Prototype is a creational design pattern used when creating an object from scratch is costly or time - consuming,
 so instead of creating a new object, we clone an existing object.
+
+Expensive object -> prototype -> clone() ->New obj
+instead of repeatedly doing new WelcomeEmail()
+
  */
 import java.util.HashMap;
 import java.util.Map;
