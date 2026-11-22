@@ -1,3 +1,7 @@
+/*
+Prototype is a creational design pattern used when creating an object from scratch is costly or time - consuming,
+so instead of creating a new object, we clone an existing object.
+ */
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,7 +55,7 @@ class EmailTemplateRegistry{
         if(template == null){
             throw new IllegalArgumentException("Template not found:" + type);
         }
-        //Clone instead of returning the orginal object
+        //Clone instead of returning the original object
         // This prevents modifications to the original prototype
         return template.clone();
     }
