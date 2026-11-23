@@ -1,3 +1,7 @@
+/*
+Adapter is a structural design pattern that allows incompatible interfaces to work together by converting
+the interface of one class into an interface expected by the client.
+ */
 // Target Interface
 interface PaymentGateway{
     void pay(String orderId, double amount);
