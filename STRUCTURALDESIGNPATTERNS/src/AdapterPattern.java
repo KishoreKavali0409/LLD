@@ -63,3 +63,25 @@ public class AdapterPattern {
         razorpayCheckout.checkout("ORDER102", 1000);
     }
 }
+
+/*
+Pros:
+1. Allows incompatible classes to work together.
+2. Follows open/closed principle.
+3. Useful for third party integrations.
+4. Reduces coupling.
+5. Easy to support multiple implementations.
+
+Cons:
+1. Adds am extra layer
+2. Too many adapters can increase complexity.
+3. Adapter may need complex transformations.
+4. Can hide differences b/w APIs
+
+When to use:
+1. Existing class has the functionality you need but incompatible interface.
+2. Integrating third party libraries.
+3. Legacy code integrations
+4. You cannot modify the existing class.
+
+ */
