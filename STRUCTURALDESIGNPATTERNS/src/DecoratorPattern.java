@@ -2,6 +2,7 @@
 Decorator is a structural design pattern that allows you to add new behavior or responsibilities to an object dynamically
 at runtime without modifying its original class.
  */
+
 //Component
 interface Pizza{
     String getDescription();
@@ -100,3 +101,39 @@ public class DecoratorPattern {
         System.out.println(fullyLoadedPizza.getDescription() + " =rs " + fullyLoadedPizza.getCost());
     }
 }
+
+/*
+Pros:
+1. Follows open/closed principle.
+2. Avoids subclass explosion.
+3. Runtime flexibility.
+4. Single responsibility principle.
+5. Composable behavior ( Structure is flexible )
+
+Cons:
+1. Can result in small class.
+2. Debugging can become difficult.
+3. Ordering can matter.
+4. Can make object creation harder to read.
+
+When to use:
+1. You need to add responsibilities dynamically.
+2. You want to avoid subclass explosion.
+   Base object
+   + Feature A
+   + Feature B
+   + Feature C
+3. Features can be combined
+   Coffee
+   |- Milk
+   |- Sugar
+   |- Whipped down
+   |- Caramel
+4. You want layered behavior
+
+When to avoid:
+1. Behavior is fixed.
+2. You only have a few simple variations.
+3. Decorator chain becomes extremely complex.
+4. Behavior has to be tightly coupled.
+ */
