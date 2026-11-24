@@ -1,3 +1,7 @@
+/*
+Decorator is a structural design pattern that allows you to add new behavior or responsibilities to an object dynamically
+at runtime without modifying its original class.
+ */
 //Component
 interface Pizza{
     String getDescription();
