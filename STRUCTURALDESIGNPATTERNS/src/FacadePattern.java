@@ -113,3 +113,29 @@ public class FacadePattern {
                 250);
     }
 }
+/*
+Pros:
+1. Lightweight coupling
+2. Flexibility
+3. Simplifies client design
+4. Promotes layered architecture
+5. Better flexibility
+
+Cons:
+1. Possible coupling (The facade itself becomes coupled to the sub system class)
+2. Hidden complexity (The client doesn't see what is happening internally which can sometimes make behavior less obvious)
+3. Runtime errors (If one of the underlying subsystem operations fails, the error may surface only when the facade operation executes)
+4. Difficult to trace
+5. SRP Violation
+
+When to use:
+1. You have complex system
+2. You want to reduce client coupling
+3. You want clean API
+4. You are creating application/service boundaries
+
+When to avoid:
+1. The subsystem is already simple.
+2. Facade becomes a god class
+3. Clients genuinely need fine-grained control
+ */
