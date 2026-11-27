@@ -105,3 +105,16 @@ class ProductBundle implements CartItem {
 
     }
 }
+/*
+Pros:
+1. Uniformity
+2. Extensible
+3. Cleaner client code
+4. Supports OCP
+
+Cons:
+1. Can violate SRP at scale
+2. Overkill for flat/simple structures
+3. Uniform interface can hide important differences
+4. More abstraction
+ */
