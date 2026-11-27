@@ -85,8 +85,7 @@ class ProductBundle implements CartItem {
 
     // Client
     public class CompositePattern {
-
-    static void main(String[] args) {
+    public static void main(String[] args) {
         CartItem book = new Product("Atomic habits", 499);
         CartItem phone = new Product("iPhone 15", 790000);
         CartItem earbuds = new Product("AirPods", 15999);
