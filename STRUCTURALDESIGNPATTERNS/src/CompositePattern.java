@@ -117,4 +117,31 @@ Cons:
 2. Overkill for flat/simple structures
 3. Uniform interface can hide important differences
 4. More abstraction
+
+When to use:
+1. You have a hierarchial/tree structure
+    File System
+    |- File
+    |- Folder
+        |- File
+        |- Folder
+        |- File
+File - Leaf
+Folder - Composite
+2. You want individual and group objects treated uniformly
+3. You have nested groups
+4. You want to eliminate client side hierarchy logic
+    instead of:
+    if product
+    else if bundle
+    else if ....
+
+    the client calls:
+    item.getPrice();
+    item.display();
+
+When to avoid:
+1. There is no hierarchy.
+2. Leaf and composite behavior is fundamentally different.
+3. You only need a simple collection.
  */
