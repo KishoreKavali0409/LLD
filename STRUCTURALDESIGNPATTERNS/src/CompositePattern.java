@@ -5,6 +5,23 @@ Individual objects(leaf)
 Group of objects(composite)
 
 Composite = Treat individual objects and collections / groups of objects in the same way.
+
+Ex: Amazon cart
+
+Cart
+|- Book
+|- iPhone essentials combo
+    |- iPhone
+    |- AirPods
+    |- 20w Charger
+|- Back to school kit
+    |- Notebook pack
+    |- Pen set
+    |- Highlighter
+
+Here, Product -> Leaf
+      ProductBundle -> Composite
+      CartItem -> Common Interface
  */
 
 import java.util.ArrayList;
