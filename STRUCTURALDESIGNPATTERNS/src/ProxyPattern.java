@@ -73,4 +73,10 @@ Behind the scene:
 First Request: Client -> CachedVideoDownloader -> Cache doesn't contain URL -> RealVideoDownloader -> Download video -> Store result in cache
 Second Request: Client -> CachedVideoDownloader -> Cache contains URL -> Return cached video
 The expensive RealVideoDownloader is therefore not called again
+
+When to use:
+- When to object creation is expensive, and you want to delay the operation.
+- When you want to control access to sensitive operations or add permissions.
+- When interesting with remote objects.
+- When you need lazy loading in your system.
  */
